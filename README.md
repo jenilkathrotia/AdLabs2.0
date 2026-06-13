@@ -8,6 +8,8 @@
 scout "Anthropic" --context "We sell an AI QA tool for AI labs"
 ```
 
+![Scout — one command: research the web with Tavily, reason and draft with Nebius, act via Composio](assets/demo.png)
+
 Scout is a single agent built on the **full sponsor stack** — every leg is load-bearing, not decoration.
 
 | Leg | Sponsor | How Scout uses it | Code |

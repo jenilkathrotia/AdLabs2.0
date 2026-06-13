@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  :root {
+    --dim: #6b7280; --cyan: #22d3ee; --green: #4ade80; --yellow: #fbbf24;
+    --magenta: #c084fc; --fg: #e6edf3; --bg: #0d1117; --bar: #161b22;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(1200px 700px at 30% -10%, #1b2540 0%, #0a0f1e 55%, #070b16 100%);
+    padding: 56px 64px;
+    font-family: "SF Mono", "JetBrains Mono", Menlo, Monaco, "Courier New", monospace;
+    width: 1040px;
+  }
+  .win {
+    background: var(--bg);
+    border-radius: 12px;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04);
+    overflow: hidden;
+  }
+  .bar {
+    background: var(--bar);
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .r { background: #ff5f56; } .y { background: #ffbd2e; } .g { background: #27c93f; }
+  .bartitle { color: #8b949e; font-size: 12.5px; margin-left: 10px; }
+  .body { padding: 22px 26px 26px; font-size: 14px; line-height: 1.62; color: var(--fg); white-space: pre-wrap; }
+  .dim { color: var(--dim); } .cyan { color: var(--cyan); } .green { color: var(--green); }
+  .yellow { color: var(--yellow); } .magenta { color: var(--magenta); } .b { font-weight: 700; }
+  .row { white-space: pre; }
+</style>
+</head>
+<body>
+  <div class="win">
+    <div class="bar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="bartitle">scout — npm run scout -- "Anthropic"</span>
+    </div>
+    <div class="body"><span class="b">  🛰  Scout → <span class="cyan">Anthropic</span></span>
+<span class="dim">  model: meta-llama/Llama-3.3-70B-Instruct  ·  mode: pipeline  ·  </span><span class="yellow">DRY RUN</span>
+
+<span class="row">  <span class="dim">[1]</span> <span class="magenta">• model</span>   requested 1 tool call(s): tavily_search</span>
+<span class="row">  <span class="dim">[1]</span> <span class="cyan">→ tool</span>    tavily_search(<span class="dim">{"query":"Anthropic","topic":"general"}</span>)</span>
+<span class="row">  <span class="dim">[1]</span> <span class="dim">← result  tavily_search → "Anthropic PBC — American AI company, founded Jan 2021…"</span></span>
+<span class="row">  <span class="dim">[2]</span> <span class="magenta">• model</span>   requested 1 tool call(s): tavily_extract</span>
+<span class="row">  <span class="dim">[2]</span> <span class="cyan">→ tool</span>    tavily_extract(<span class="dim">{"urls":["anthropic.com/company", …]}</span>)</span>
+<span class="row">  <span class="dim">[2]</span> <span class="dim">← result  tavily_extract → 2 pages extracted</span></span>
+<span class="row">  <span class="dim">[3]</span> <span class="green">✓ final</span>   <span class="dim">brief ready</span></span>
+
+<span class="b">  ✉️  Drafted email</span>
+<span class="dim">  ────────────────</span>
+  <span class="b">Subject:</span> Exploring Collaboration Opportunities for Safe AI Development
+
+  Hi Dario,
+  I've been following Anthropic's progress in AI development, particularly the
+  launch of your first commercial model and The Anthropic Institute. I'm impressed
+  by your commitment to building reliable and interpretable AI systems.
+  I'd love to discuss potential collaboration opportunities for safe AI
+  development. Could we schedule a call to explore this further?
+
+<span class="b">  💬 Slack summary</span>
+<span class="dim">  ───────────────</span>
+  Anthropic is an AI company focused on safe, reliable AI — recent first commercial
+  model + The Anthropic Institute. Outreach angle: collaborate on safe AI
+  development. Key people: Dario Amodei, Daniela Amodei, Jack Clark.
+
+<span class="b">  ⚡ Actions</span>
+<span class="dim">  ────────</span>
+<span class="row">  <span class="yellow">○</span> NOTION_CREATE_NOTION_PAGE  <span class="dim">[dry-run] would create page "Scout dossier — Anthropic"</span></span>
+<span class="row">  <span class="yellow">○</span> GMAIL_SEND_EMAIL           <span class="dim">[dry-run] would email the drafted outreach</span></span>
+<span class="row">  <span class="yellow">○</span> SLACK_SEND_MESSAGE         <span class="dim">[dry-run] would post the summary</span></span>
+
+<span class="dim">  research: 2 searches in 3 steps  ·  37.4s</span>
+</div>
+  </div>
+</body>
+</html>
