@@ -87,7 +87,9 @@ export async function createNotionPage(input: {
   await execute("NOTION_CREATE_NOTION_PAGE", {
     parent_id: input.parentId,
     title: input.title,
-    content: input.content,
+    // Composio's NOTION_CREATE_NOTION_PAGE names the body 'markdown' (not
+    // 'content'); an unknown 'content' key is silently dropped → empty page.
+    markdown: input.content,
   });
   return { action: "NOTION_CREATE_NOTION_PAGE", executed: true, detail: `Created Notion page "${input.title}"` };
 }
