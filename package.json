@@ -1,0 +1,29 @@
+{
+  "name": "scout-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Scout — an autonomous GTM agent. Tavily searches, Nebius reasons, Composio acts.",
+  "bin": {
+    "scout": "./dist/index.js"
+  },
+  "scripts": {
+    "scout": "tsx src/index.ts",
+    "connect": "tsx src/connect.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@composio/core": "^0.10.0",
+    "@composio/openai": "^0.9.2",
+    "@tavily/core": "^0.7.6",
+    "dotenv": "^16.4.5",
+    "openai": "^6.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
